@@ -7,7 +7,8 @@ module AwareLibrary
 		def to_hash
 			hash = {
 				:title => @document.title,
-				:link => @document.link
+				:link => @document.link,
+				:authors => @document.authors
 			}
     end
 	end

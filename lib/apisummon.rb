@@ -11,7 +11,10 @@ module AwareLibrary
 
     def get_documents(term)
       search = @service.search(
-        "s.q" => term
+        "s.q" => term,
+        "s.hl" => false,
+        "s.pn" => 1,
+        "s.ps" => 40
       )
     end
 

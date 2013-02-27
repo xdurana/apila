@@ -8,17 +8,22 @@ module AwareLibrary
     end
 
     def self.search_documents(term)
+      list = Array.new
       search = apis.get_documents(term)
+      search.documents.each do |document|
+        list << {
+          :item => Item.new(document)
+        }
+      end
+      { :items => list }
     end
 
     def self.search_conferences(term)
-      search = apis.get_conferences(term)
-      get_publications(search, term)
+      get_publications(apis.get_conferences(term), term)
     end
 
     def self.search_journals(term)
-      search = apis.get_journals(term)
-      get_publications(search, term)
+      get_publications(apis.get_journals(term), term)
     end
 
     def self.get_publications(search, term)
@@ -29,17 +34,13 @@ module AwareLibrary
       end
       list = Array.new
       publications.each do |title, items|
+        link = apis.get_publication_link(title, term)
         list << {
-          :publication => {
-            :title => title,
-            :link => apis.get_publication_link(title, term),
-            :count => items.count,
-            :items => items
-          }
+          :publication => Publication.new(title, link, items)
         }
       end
-      list.sort! { |x, y| x[:count] <=> y[:count]}
-      list.reverse
+      list.sort! { |x, y| x[:publication].count <=> y[:publication].count }
+      { :publications => list.reverse }
     end
 
   end
