@@ -3,6 +3,7 @@ source "http://rubygems.org"
 gem 'bundler'
 gem 'grape'
 gem 'json'
+gem 'summon'
 
 group :test do
   gem 'rake'
