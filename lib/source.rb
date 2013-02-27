@@ -22,23 +22,24 @@ module AwareLibrary
     end
 
     def self.get_publications(search, term)
-      publications = Hash.new(0)
+      publications = Hash.new { |h,k| h[k] = [] }
       search.documents.each do |document|
-        if document.publication_title
-          publications[document.publication_title] += 1
-        end
+        title = document.publication_title
+        publications[title] << Item.new(document) if title
       end
       list = Array.new
-      publications.each do |title, count|
-        link = apis.get_publication_link(title, term)
+      publications.each do |title, items|
         list << {
-          :title => title,
-          :count => count,
-          :link => link
+          :publication => {
+            :title => title,
+            :link => apis.get_publication_link(title, term),
+            :count => items.count,
+            :items => items
+          }
         }
       end
       list.sort! { |x, y| x[:count] <=> y[:count]}
-      list.reverse.to_json
+      list.reverse
     end
 
   end

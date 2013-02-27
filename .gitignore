@@ -1,2 +1,3 @@
-config/summon.yaml
-config/database.yaml
+config/summon.yml
+config/database.yml
+doc/*
