@@ -1,5 +1,6 @@
 module AwareLibrary
 	class API_v1 < Grape::API
+		
 		version 'v1', :using => :path
 
 		resource :system do
@@ -12,6 +13,14 @@ module AwareLibrary
 		end
 
 		resource :summon do
+
+			desc "Get the bare response"
+			params do
+        requires :term, :type => String, :desc => "Term"
+      end			
+			get :search do
+				Presenter.new(Query.new(:search, params[:term]).search)
+			end
 
 			desc "Get the documents related to a term"
 			params do

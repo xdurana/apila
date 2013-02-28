@@ -1,6 +1,6 @@
 module AwareLibrary
   class Query
-    
+
     def initialize(path, term)
     	@path = path
     	@term = term
@@ -17,6 +17,10 @@ module AwareLibrary
         :term => @term
       })
       data
+    end
+
+    def search
+      #TODO
     end
 
     def documents
