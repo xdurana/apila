@@ -7,7 +7,7 @@ Dir[File.expand_path('../../api/api_v*.rb', __FILE__)].each do |f|
   require f
 end
 
-Dir[File.expand_path('../../lib/*.rb', __FILE__)].each do |f|
+Dir[File.expand_path('../../app/*.rb', __FILE__)].each do |f|
   require f
 end
 
