@@ -1,17 +1,23 @@
+# APILADOR
+
+2 f. [LC] Aparell emprat per a apilar materials.
+
 ## DESCRIPTION
 
 A RESTful API to find learning resources in context
 
 ## LINKS
 
-* Summon API (http://api.summon.serialssolutions.com/help/api/)
-* Ruby language bindings for Serials Solutions Summon Unified Discovery Service (http://rubygems.org/gems/summon)
-* Summon Gem Model(http://rubydoc.info/gems/summon/2.0.5/frames)
+* Summon API[http://api.summon.serialssolutions.com/help/api/]
+* Ruby language bindings for Serials Solutions Summon Unified Discovery Service[http://rubygems.org/gems/summon]
+* Summon Gem Model [http://rubydoc.info/gems/summon/2.0.5/frames]
 
-### RESTful API
+## RESTful API
 
 documents/:term
+
 journals/:term
+
 publications/:term
 
 ## LICENSE

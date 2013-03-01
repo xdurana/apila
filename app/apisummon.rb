@@ -9,6 +9,12 @@ module AwareLibrary
       )
     end
 
+    def search(query)
+      search = @service.search(query)
+      search.to_s
+      #TODO: to_json
+    end
+
     def get_documents(term)
       search = @service.search(
         "s.q" => term,

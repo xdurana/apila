@@ -1,9 +1,8 @@
 module AwareLibrary
   class Query
 
-    def initialize(path, term)
-    	@path = path
-    	@term = term
+    def initialize(params)
+    	@params = params
     	@apisummon = APISummon.new
     end
 
@@ -11,35 +10,45 @@ module AwareLibrary
       @apisummon
     end
 
+    def term
+      @params[:term]
+    end
+
+    def query
+      @params.reject {|key,value| !key.start_with? "s" }
+    end
+
     def response(data)
       Log.info({
         :datetime => Time.now,
-        :term => @term
+        :params => params
       })
       data
     end
 
     def search
-      #TODO
+      apis.search(query)
     end
 
     def documents
       list = Array.new
-      search = apis.get_documents(@term)
+      search = apis.get_documents(term)
       search.documents.each do |document|
         list << {
           :item => Item.new(document)
         }
       end
-      response({ :items => list })
+      response({
+        :items => list
+      })
     end
 
     def conferences
-      response(publications(apis.get_conferences(@term)))
+      response(publications(apis.get_conferences(term)))
     end
 
     def journals
-      response(publications(apis.get_journals(@term)))
+      response(publications(apis.get_journals(term)))
     end
 
     def publications(search)
@@ -50,7 +59,7 @@ module AwareLibrary
       end
       list = Array.new
       publications.each do |title, items|
-        link = apis.get_publication_link(title, @term)
+        link = apis.get_publication_link(title, term)
         list << {
           :publication => Publication.new(title, link, items)
         }
