@@ -13,7 +13,7 @@ module AwareLibrary
       end
 
 			get :log do
-				Presenter.new(Query.new(:log, nil).log)
+				Presenter.new(Query.new(params).log)
 			end
 	
 		end
@@ -22,10 +22,7 @@ module AwareLibrary
 
 			desc "Get the bare response"
 			get :search do
-				Presenter.new({
-					:route => route,
-					:query => Query.new(params).search
-				})
+				Presenter.new(Query.new(params).search)
 			end
 
 		end

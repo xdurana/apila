@@ -21,7 +21,7 @@ module AwareLibrary
     def response(data)
       Log.info({
         :datetime => Time.now,
-        :params => params
+        :params => @params.to_s
       })
       data
     end
