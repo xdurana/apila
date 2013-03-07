@@ -25,29 +25,25 @@ module AwareLibrary
 				Presenter.new(Query.new(params).search)
 			end
 
-		end
-
-		resource :uoc do
-
-			desc "Get the documents related to a term"
+			desc "Get the documents related to a keyword"
 			params do
-        requires :term, :type => String, :desc => "Term"
+        requires :keyword, :type => String, :desc => "Term"
       end			
 			get :documents do
 				Presenter.new(Query.new(params).documents)
 			end
 
-			desc "Get the conferences related to a term"
+			desc "Get the conferences related to a keyword"
 			params do
-        requires :term, :type => String, :desc => "Term"
+        requires :keyword, :type => String, :desc => "Term"
       end			
 			get :conferences do
 				Presenter.new(Query.new(params).conferences)
 			end
 
-			desc "Get the journals related to a term"
+			desc "Get the journals related to a keyword"
 			params do
-        requires :term, :type => String, :desc => "Term"
+        requires :keyword, :type => String, :desc => "Term"
       end			
 			get :journals do
 				Presenter.new(Query.new(params).journals)

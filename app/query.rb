@@ -10,8 +10,8 @@ module AwareLibrary
       @apisummon
     end
 
-    def term
-      @params[:term]
+    def keyword
+      @params[:keyword]
     end
 
     def query
@@ -32,7 +32,7 @@ module AwareLibrary
 
     def documents
       list = Array.new
-      search = apis.get_documents(term)
+      search = apis.get_documents(keyword)
       search.documents.each do |document|
         list << {
           :item => Item.new(document)
@@ -44,11 +44,11 @@ module AwareLibrary
     end
 
     def conferences
-      response(publications(apis.get_conferences(term)))
+      response(publications(apis.get_conferences(keyword)))
     end
 
     def journals
-      response(publications(apis.get_journals(term)))
+      response(publications(apis.get_journals(keyword)))
     end
 
     def publications(search)
@@ -59,7 +59,7 @@ module AwareLibrary
       end
       list = Array.new
       publications.each do |title, items|
-        link = apis.get_publication_link(title, term)
+        link = apis.get_publication_link(title, keyword)
         list << {
           :publication => Publication.new(title, link, items)
         }
