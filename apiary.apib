@@ -1,16 +1,8 @@
 HOST: http://api.biblioteca.uoc.edu
 
---- APILA Learning Resources API ---
----
-A RESTful API to manage Learning Resources in context
----
+--- Gateway to the Summon API and (a little bit) more ---
 
---
-Summon
-Extension of the Summon API
-(http://api.summon.serialssolutions.com/help/api/)
---
-Gateway to the Summon API
+Get the documents with the Summon API syntax
 GET /summon/{?s.cmd,s.debug,s.dym,s.ff,s.fvf,s.fvgf,s.he,s.hs,s.hl,s.ho,s.l,s.mr,s.pn,s.ps,s.role,s.rff,s.rf,s.sort,s.fq,s.q}
 /summon/search?s.q=learning+analytics
 < 200
@@ -566,86 +558,3 @@ GET /summon/journals/{?keyword}
         }]
     }
 }
-
---
-The library and the classroom
---
-Gets the resource list of a course
-GET /courses/{idc}/resources/
-< 200
-< Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
-
-Links a resource to a course
-POST /courses/{idc}/resources/{idr}
-< 200
-< Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
-
-Unlinks a resource from a course
-DELETE /courses/{idc}/resources/{idr}
-< 200
-< Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
-
-Gets the list of resources of a classroom
-GET /classrooms/{idk}/resources/
-< 200
-< Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
-
-Links a resource to a classroom
-POST /classrooms/{idk}/resources/{idr}
-< 200
-< Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
-
-Unlinks a resource from a classroom
-DELETE /classrooms/{idk}/resources/{idr}
-< 200
-< Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
-
-Creates a new resource
-POST /resources
-> Content-Type: application/json
-{ "product":"1AB23ORM", "quantity": 2 }
-< 201
-< Content-Type: application/json
-{ "status": "created", "url": "/shopping-cart/2" }
-
-Gets the resource metadata
-GET /resources/{idr}
-< 200
-< Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
-
-Gets a filtered list of resources
-GET /resources/{?filter}
-< 200
-< Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
-
-Deletes a resource
-DELETE /resources/{idr}
-> Content-Type: application/json
-{ "product":"1AB23ORM", "quantity": 2 }
-< 201
-< Content-Type: application/json
-{ "status": "created", "url": "/shopping-cart/2" }
