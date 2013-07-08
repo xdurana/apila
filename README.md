@@ -6,6 +6,25 @@
 
 A RESTful API to find learning resources in context
 
+##INSTALLATION
+
+    git clone git://github.com/xdurana/apila.git
+    cd apila
+    bundle install
+
+    cp config/summon.example.yml config/summon.yml
+    subl config/summon.yml
+
+    shotgun
+
+## TESTS
+
+    http://localhost:9393/api/v1/status/ping
+    http://localhost:9393/api/v1/summon/search?s.q=probability+models
+    http://localhost:9393/api/v1/summon/conferences?keyword=quantum+mechanics
+    http://localhost:9393/api/v1/summon/documents?keyword=cognitive+science
+    http://localhost:9393/api/v1/summon/journals?keyword=learning+analytics
+
 ## LINKS
 
 * [APILA API Documentation](http://docs.xdurana.apiary.io/)
