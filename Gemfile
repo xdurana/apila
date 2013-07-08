@@ -4,7 +4,6 @@ gem 'bundler'
 gem 'grape'
 gem 'json'
 gem 'summon'
-gem 'mongo'
 gem 'bson_ext'
 
 group :test do

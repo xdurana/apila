@@ -25,8 +25,6 @@ GEM
     hashie (1.2.0)
     i18n (0.6.4)
     json (1.7.7)
-    mongo (1.8.2)
-      bson (~> 1.8.2)
     multi_json (1.6.1)
     multi_xml (0.5.3)
     rack (1.5.2)
@@ -81,7 +79,6 @@ DEPENDENCIES
   bundler
   grape
   json
-  mongo
   rack-test
   rake
   rspec

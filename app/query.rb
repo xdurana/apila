@@ -19,10 +19,6 @@ module AwareLibrary
     end
 
     def response(data)
-      Log.info({
-        :datetime => Time.now,
-        :params => @params.to_s
-      })
       data
     end
 
@@ -66,10 +62,6 @@ module AwareLibrary
       end
       list.sort! { |x, y| x[:publication].count <=> y[:publication].count }
       { :publications => list.reverse }
-    end
-
-    def log
-    	response(Log.all)
     end
 
   end

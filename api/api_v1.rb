@@ -12,10 +12,6 @@ module AwareLibrary
        	})
       end
 
-			get :log do
-				Presenter.new(Query.new(params).log)
-			end
-	
 		end
 
 		resource :summon do

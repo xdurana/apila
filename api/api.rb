@@ -3,12 +3,6 @@ module AwareLibrary
 		prefix 'api'
 		format :json
 
-	  helpers do
-	    def logger
-	      API.logger
-	    end
-	  end
-	  
     rescue_from :all do |e|
 	    rack_response({ :message => "rescued from #{e.class.name}" })
 	  end
