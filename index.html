@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Apila by xdurana</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Apila</h1>
+        <p>A RESTful API gateway to Summon API</p>
+
+        <p class="view"><a href="https://github.com/xdurana/apila">View the Project on GitHub <small>xdurana/apila</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/xdurana/apila/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/xdurana/apila/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/xdurana/apila">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="apila" class="anchor" href="#apila" aria-hidden="true"><span class="octicon octicon-link"></span></a>APILA</h1>
+
+<p>1 1 v. tr. [LC] Posa (coses) l’una sobre l’altra formant pila o piles</p>
+
+<h2>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>DESCRIPTION</h2>
+
+<p>A RESTful API to find learning resources in context</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>INSTALLATION</h2>
+
+<pre><code>git clone git://github.com/xdurana/apila.git
+cd apila
+bundle install
+
+cp config/summon.example.yml config/summon.yml
+subl config/summon.yml
+
+shotgun
+</code></pre>
+
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>TESTS</h2>
+
+<pre><code>http://localhost:9393/api/v1/status/ping
+http://localhost:9393/api/v1/summon/search?s.q=probability+models
+http://localhost:9393/api/v1/summon/conferences?keyword=quantum+mechanics
+http://localhost:9393/api/v1/summon/documents?keyword=cognitive+science
+http://localhost:9393/api/v1/summon/journals?keyword=learning+analytics
+</code></pre>
+
+<h2>
+<a id="links" class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>LINKS</h2>
+
+<ul>
+<li><a href="http://docs.xdurana.apiary.io/">APILA API Documentation</a></li>
+<li><a href="http://api.summon.serialssolutions.com/help/api/">Summon API</a></li>
+<li><a href="http://rubygems.org/gems/summon">Ruby language bindings for Serials Solutions Summon Unified Discovery Service</a></li>
+<li><a href="http://rubydoc.info/gems/summon/2.0.5/frames">Summon Gem Model</a></li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>LICENSE</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2013 Xavier Duran Albareda</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/xdurana">xdurana</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-43245592-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
